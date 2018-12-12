@@ -1,0 +1,2 @@
+String = input("Please input the sentence")
+print("Your sentence backwards is",String[::-1])
