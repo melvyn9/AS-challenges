@@ -1,0 +1,13 @@
+def melv(list):
+    n = int(len(list))
+    for j in range(n -1,0,-1):
+        for i in range(j):
+            if list[i] > list[i+1]:
+                temp = list[i]
+                list[i] = list[i+1]
+                list[i+1] = temp
+            print(list)
+
+
+list = [321,333,323,32,33,3,12,3,4]
+melv(list)
