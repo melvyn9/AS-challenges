@@ -1,0 +1,15 @@
+List = [123,2355,321,3,5,23]
+number = int(input("Please input a number"))
+position = 0
+found = False
+
+while position < len(List):
+    if List[position] == number:
+        print("Found")
+        found = True
+        break
+    else:
+        print("Not Found")
+        break
+    position += 1
+print(found)
