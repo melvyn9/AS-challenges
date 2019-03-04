@@ -1,0 +1,48 @@
+Letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+Menu = "#"
+
+def Filemenu():
+    Ask = int(input("Please enter 0 if u want to encode or 1 if you want to decode: "))
+    while True:
+        if Ask == 1:
+            CeaserInput("test.txt")
+            CeaserDecoder("test.txt")
+            break
+        elif Ask == 0:
+            CeaserInput("test.txt")
+            CeaserEncoder("test.txt")
+            break
+        else:
+            Ask = int(input("Please enter 0 if u want to encode or 1 if you want to decode: "))
+
+def CeaserInput(file):
+    myfile = open("test.txt", "w")
+    string = input("Please input the string (no spaces) : ")
+    myfile.write(string)
+    myfile.close()
+
+def CeaserEncoder(file):
+        mynewhandle = open("test.txt", "r")
+        Shift = int(input("Please input the shift: "))
+        while True:
+            theline = mynewhandle.readline()
+            if len(theline) == 0:
+                break
+            for i in theline:
+                line_index = Letters.index(i)
+                print(Letters[line_index+int(Shift)])
+        mynewhandle.close()
+
+def CeaserDecoder(file):
+        mynewhandle = open("test.txt", "r")
+        Shift = int(input("Please input the shift: "))
+        while True:
+            theline = mynewhandle.readline()
+            if len(theline) == 0:
+                break
+            for i in theline:
+                line_index = Letters.index(i)
+                print(Letters[line_index+int(Shift)])
+        mynewhandle.close()
+    
+Filemenu()
